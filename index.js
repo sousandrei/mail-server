@@ -1,12 +1,8 @@
-const fs = require('fs')
-const { CERT, KEY, HTTPS } = require('./config')
+const { PORT } = require('./config/config')
 
 let app = require('./config/express')()
 
-require('https').createServer({
-	cert: fs.readFileSync(CERT),
-	key: fs.readFileSync(KEY)
-}, app).listen(HTTPS, () => {
+require('http').createServer(app).listen(PORT, () => {
 	/* istanbul ignore if */
 	if (process.env.NODE_ENV != 'test')
 		console.log('Online')
