@@ -1,0 +1,17 @@
+{
+  "name": "mail-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "Andrei Sousa",
+  "license": "UNLISCENSED",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "compression": "^1.6.2",
+    "express": "^4.15.2",
+    "mailgun-js": "^0.10.1",
+    "method-override": "^2.3.8",
+    "node-mailer": "^0.1.1",
+    "nodemailer-mailgun-transport": "^1.3.4"
+  }
+}
