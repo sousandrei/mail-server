@@ -10,8 +10,13 @@ module.exports = () => {
 
 	app.use(require('method-override')())
 
+
 	require('../routes/duality.js')(app)
 	require('../routes/akuntsu.js')(app)
+	
+	app.all('*', (req, res) => { 
+		res.status(404).end()
+	})
 	
 	return app
 }	

@@ -14,7 +14,7 @@ let mailOptions = {
 
 module.exports = (app) => {
 
-	app.post('/duality', (req, res) => {
+	app.post('/mail/duality', (req, res) => {
 
 		mailOptions.from = `"${req.body.name}" ${req.body.from}`
 		mailOptions.subject = `SITE - ${req.body.subject}`

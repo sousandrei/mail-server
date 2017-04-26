@@ -1,5 +1,3 @@
 {
-	"CERT": "./ssl/sample/device.crt",
-	"KEY": "./ssl/sample/device.key",
 	"PORT": 4650
 }
