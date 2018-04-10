@@ -1,11 +1,10 @@
-const { PORT } = require('./config/config')
+require('dotenv').config()
+
+const { PORT } = process.env
 
 let app = require('./config/express')()
 
-require('http').createServer(app).listen(PORT, () => {
-	/* istanbul ignore if */
-	if (process.env.NODE_ENV != 'test')
-		console.log(`Online ${PORT}`)
-})
+require('http').createServer(app).listen(PORT, () =>
+	console.log(`Online ${PORT}`))
 
 module.exports = app
