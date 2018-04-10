@@ -13,13 +13,12 @@ module.exports = (app, {
 
 		mailOptions = { ...mailOptions, ...buildMessage(req.body) }
 
-		console.log(mailOptions)
-
 		try {
 			let result = await transporter.sendMail(mailOptions)
-			console.info(`email ${route}`, mailOptions)
+			console.info(result)
 			return res.status(200).json(result)
 		} catch (err) {
+			console.error(err)
 			return res.status(500).json(err)
 		}
 

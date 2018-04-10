@@ -19,7 +19,7 @@ module.exports = () => {
 		require('./mail')(app, require(`../routes/${r}`))
 
 	app.all('*', (req, res) =>
-		res.status(404).end())
+		res.status(404).end(req.path))
 
 	return app
 }	
